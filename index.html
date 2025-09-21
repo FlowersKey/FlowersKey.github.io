@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Para Mi Amor - Primavera 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 50%, #1a1a1a 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fondo con estrellas animadas */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            color: #ffd700;
+            animation: twinkle 3s infinite ease-in-out;
+            font-size: 1rem;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); color: #fff; }
+        }
+
+        /* Contenedor principal */
+        .container {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 215, 0, 0.3);
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            border: 2px solid rgba(255, 0, 212, 0.2);
+        }
+
+        /* Imagen */
+        .couple-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            background: url('img/jeje.jpeg') center/cover;
+            border: 5px solid #59cbdf;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 0, 234, 0.4);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Título principal */
+        .main-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #1a1a1a, #9c2382, #ff69b4, #ffd700, #1a1a1a);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 3s ease infinite;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(182, 18, 174, 0.3);
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Subtítulo */
+        .subtitle {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        /* Mensaje personal */
+        .personal-message {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .highlight {
+            color: #ff69b4;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+        }
+
+        /* Botón principal */
+        .main-button {
+            background: linear-gradient(135deg, #1a1a1a 0%, #e027e0 50%, #1a1a1a 100%);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(51, 133, 180, 0.4), 0 0 20px rgba(255, 215, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #b631af;
+        }
+
+        .main-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(201, 33, 178, 0.6), 0 0 30px rgba(212, 33, 228, 0.4);
+            background: linear-gradient(135deg, #cf23aa 0%, #e4dcdc 50%, #aa24d3 100%);
+        }
+
+        .main-button:active {
+            transform: translateY(-1px);
+        }
+
+        .main-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .main-button:hover::before {
+            left: 100%;
+        }
+
+        /* Elementos decorativos */
+        .decoration {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+        }
+
+        .decoration:nth-child(1) {
+            top: 20px;
+            left: 20px;
+            animation-delay: 0s;
+        }
+
+        .decoration:nth-child(2) {
+            top: 20px;
+            right: 20px;
+            animation-delay: 0.5s;
+        }
+
+        .decoration:nth-child(3) {
+            bottom: 20px;
+            left: 20px;
+            animation-delay: 1s;
+        }
+
+        .decoration:nth-child(4) {
+            bottom: 20px;
+            right: 20px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+                width: 95%;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .personal-message {
+                font-size: 1rem;
+            }
+            
+            .couple-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .main-button {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Estrellas de fondo -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Elementos decorativos -->
+        <div class="decoration">🌸</div>
+        <div class="decoration">💫</div>
+        <div class="decoration">🌺</div>
+        <div class="decoration">⭐</div>
+
+        <!-- Imagen de la pareja -->
+        <div class="couple-image"></div>
+
+        <!-- Título principal -->
+        <h1 class="main-title">¡Hola mi Amor!</h1>
+
+        <!-- Subtítulo -->
+        <p class="subtitle">Bienvenida Primavera 2025 🌸</p>
+
+        <!-- Mensaje personal -->
+        <p class="personal-message">
+            Para <span class="highlight">mi cielo</span> más hermoso,<br>
+            que llena de estrellas cada uno de mis días.<br>
+            Un pequeño detalle hecho con amor para ti.<br>
+            <strong>- Tu Futuro Esposo.</strong>
+        </p>
+
+        <!-- Botón principal -->
+        <a href="flower.html" class="main-button" id="mainButton">
+            Ver sorpresa
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Primavera 2025 • Hecho con Amor para la mujer más especial
+    </div>
+
+    <script>
+        // Generar estrellas aleatorias
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numberOfStars = 50;
+
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.innerHTML = '⭐';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.fontSize = (Math.random() * 0.5 + 0.5) + 'rem';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Efecto de carga suave
+        window.addEventListener('load', function() {
+            createStars();
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 1s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Efecto de partículas en hover del botón
+        document.querySelector('.main-button').addEventListener('mouseenter', function() {
+            // Crear efecto de partículas sutiles
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    createFloatingHeart();
+                }, i * 100);
+            }
+        });
+
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💕';
+            heart.style.position = 'fixed';
+            heart.style.pointerEvents = 'none';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.top = window.innerHeight + 'px';
+            heart.style.fontSize = '1.5rem';
+            heart.style.zIndex = '5';
+            heart.style.transition = 'all 3s ease-out';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.style.transform = 'translateY(-' + (window.innerHeight + 100) + 'px) rotate(360deg)';
+                heart.style.opacity = '0';
+            }, 100);
+
+            setTimeout(() => {
+                document.body.removeChild(heart);
+            }, 3000);
+        }
+        // Transición suave al hacer clic en "Ver sorpresa"
+        document.getElementById('mainButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Aplicar efecto de salida
+            document.body.classList.add('fade-out');
+            
+            // Redirigir después de la animación
+            setTimeout(() => {
+                window.location.href = 'flower.html';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
